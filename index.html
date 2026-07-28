@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestão de Projetos e Pessoas com Shrek</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome 6 Free Solid (Garantidos e Testados) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- GSAP & ScrollTrigger -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+    <!-- CAMADAS GLOBAIS DE FOLHAS E VAGALUMES PARA TODOS OS 13 SLIDES -->
+    <div class="global-fireflies fireflies-container"></div>
+    <div class="global-leaves leaves-container"></div>
+
+    <!-- LOADER DO LIVRO DE CONTOS DE FADAS DO SHREK -->
+    <div id="loader">
+        <div class="book">
+            <div class="page"></div>
+        </div>
+        <h2>"Era uma vez, em um pântano muito, muito distante..."</h2>
+        <span class="loader-tip">(Clique para pular a abertura)</span>
+    </div>
+
+    <!-- BARRA FIXA DE PROGRESSO -->
+    <div id="progress">
+        <div id="bar"></div>
+    </div>
+
+    <!-- HUD SUPERIOR ESTILO PAINEL MEDIEVAL DO REINO -->
+    <header id="presentation-hud">
+        <div class="hud-brand">
+            <i class="fa-solid fa-crown hud-icon"></i>
+            <span class="hud-logo">SHREK PROJECT MANAGEMENT</span>
+            <span id="slide-counter" class="hud-counter">Slide 1 de 13</span>
+        </div>
+        <div class="hud-controls">
+            <button id="btn-music" class="hud-btn highlight-btn" title="All Star (Versão Medieval)">
+                <i class="fa-solid fa-music"></i> Música: OFF
+            </button>
+            <button id="btn-sound" class="hud-btn" title="Efeitos Sonoros">
+                <i class="fa-solid fa-volume-high"></i> Efeitos: ON
+            </button>
+            <div class="hud-divider"></div>
+            <button id="btn-prev" class="hud-btn nav-btn" title="Slide Anterior">
+                <i class="fa-solid fa-chevron-left"></i> Anterior
+            </button>
+            <button id="btn-next" class="hud-btn nav-btn primary-btn" title="Próximo Slide">
+                Próximo <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- CONTAINER DOS 13 SLIDES -->
+    <main id="presentation-container">
+
+        <!-- SLIDE 1 — ABERTURA CINEMATOGRÁFICA -->
+        <section id="slide1" class="scene swamp-theme cinematic-slide">
+            <!-- CAMADAS DE PARALLAX E FLORESTA DO SHREK -->
+            <div class="sky-dark"></div>
+            <div class="moon-glowing"></div>
+            <div class="forest-background-parallax"></div>
+            
+            <!-- NÉVOA, FUMAÇA E VAGALUMES -->
+            <div class="fog fog1"></div>
+            <div class="fog fog2"></div>
+            <div class="smoke-layer"></div>
+            <div class="fireflies-container"></div>
+            <div class="leaves-container"></div>
+
+            <!-- PÔSTER RÚSTICO BEWARE OF OGRE NA DIREITA INFERIOR -->
+            <div class="ogre-poster-corner">
+                <img src="assets/images/placa_ogro.jpg" alt="Beware of Ogre Poster" class="ogre-poster-img">
+            </div>
+
+            <!-- CONTEÚDO PRINCIPAL DO SLIDE 1 -->
+            <div class="content fairytale-scroll" id="slide1-content">
+                <div class="hero-gif-container magical-border">
+                    <img src="assets/images/shrek_smiling.gif" alt="Shrek sorrindo no pântano" class="hero-swamp-gif">
+                </div>
+
+                <h1 class="cinematic-title">
+                    Gestão de Projetos e Pessoas
+                    <span>Aprendendo Scrum com Shrek</span>
+                </h1>
+
+                <div class="cta-box">
+                    <button id="start" class="btn-action main-start-btn pulse">
+                        <i class="fa-solid fa-compass"></i> Começar a Missão
+                    </button>
+                </div>
+            </div>
+            <div class="scroll"><i class="fa-solid fa-angle-down"></i></div>
+        </section>
+
+        <!-- SLIDE 2 — O DESAFIO DO PROJETO (CENA I) -->
+        <section id="slide2" class="scene swamp-theme">
+            <div class="scene-background"></div>
+            <div class="scene-content">
+                <span class="scene-number"><i class="fa-solid fa-scroll"></i> Cena I</span>
+                <h2>Todo projeto começa com um desafio</h2>
+                <p class="scene-text">
+                    Lord Farquaad precisa que Fiona seja resgatada para se tornar rei de Duloc. No mundo corporativo, essa missão representa o início de um projeto: existe um problema real, um prazo, recursos limitados e uma entrega esperada.
+                </p>
+
+                <div class="mission-card parchment-box">
+                    <div class="mission-banner">
+                        <img src="assets/images/lord_farquaad.gif" alt="Lord Farquaad discursando" class="banner-gif">
+                    </div>
+                    <div class="mission-title"><i class="fa-solid fa-chess-king"></i> O DESAFIO DO REINO VS MUNDO CORPORATIVO</div>
+                    <div class="mission-grid">
+                        <div class="mission-item">
+                            <span class="m-badge"><i class="fa-solid fa-shield"></i></span>
+                            <div>
+                                <strong>Missão do Filme:</strong>
+                                <p>Resgatar a Princesa Fiona da torre guardada pelo Dragão.</p>
+                            </div>
+                        </div>
+                        <div class="mission-item">
+                            <span class="m-badge"><i class="fa-solid fa-bullseye"></i></span>
+                            <div>
+                                <strong>Projeto Corporativo:</strong>
+                                <p>Entregar um produto funcionando no prazo e com qualidade.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="journey">
+                    <div class="step active">
+                        <div class="icon"><i class="fa-solid fa-water"></i></div>
+                        <span>Pântano</span>
+                    </div>
+                    <div class="line"></div>
+                    <div class="step">
+                        <div class="icon"><i class="fa-solid fa-tree"></i></div>
+                        <span>Floresta</span>
+                    </div>
+                    <div class="line"></div>
+                    <div class="step">
+                        <div class="icon"><i class="fa-solid fa-chess-rook"></i></div>
+                        <span>Castelo</span>
+                    </div>
+                    <div class="line"></div>
+                    <div class="step">
+                        <div class="icon"><i class="fa-solid fa-trophy"></i></div>
+                        <span>Entrega</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 3 — O TIME POR TRÁS DA MISSÃO (CENA II) -->
+        <section id="slide3" class="scene team-scene">
+            <div class="team-background"></div>
+            <div class="scene-content">
+                <span class="scene-number"><i class="fa-solid fa-users"></i> Cena II</span>
+                <h2>Conhecendo o Time</h2>
+                <p class="scene-text">
+                    Nenhum projeto é feito sozinho. Cada personagem possui características marcantes, desafios de comunicação e um papel essencial no resultado final.
+                </p>
+
+                <div class="characters">
+                    <!-- SHREK -->
+                    <div class="character-card parchment-card">
+                        <div class="character-image shrek">
+                            <img src="assets/images/shrek_deboche.gif" alt="Shrek debochado" class="char-img-art">
+                        </div>
+                        <h3>Shrek</h3>
+                        <span><i class="fa-solid fa-user-gear"></i> Líder Técnico</span>
+                        <p class="char-quote">"Eu só queria ficar tranquilo no meu pântano..."</p>
+                        <div class="role">
+                            Desenvolvedor experiente e executor centralizado. Resolve problemas complexos, mas odeia interrupções e reluta em delegar.
+                        </div>
+                    </div>
+
+                    <!-- BURRO -->
+                    <div class="character-card parchment-card">
+                        <div class="character-image burro">
+                            <img src="assets/images/burro_sorrindo.gif" alt="Burro sorrindo" class="char-img-art">
+                        </div>
+                        <h3>Burro</h3>
+                        <span><i class="fa-solid fa-comments"></i> Cliente / Stakeholder</span>
+                        <p class="char-quote">"Já chegamos? E agora? E se fizermos um waffle?"</p>
+                        <div class="role">
+                            Representa o cliente comunicativo. Cheio de ideias, faz perguntas o tempo todo e busca feedback constante.
+                        </div>
+                    </div>
+
+                    <!-- FIONA -->
+                    <div class="character-card parchment-card">
+                        <div class="character-image fiona">
+                            <img src="assets/images/fiona_castelo.webp" alt="Fiona no castelo" class="char-img-art">
+                        </div>
+                        <h3>Fiona</h3>
+                        <span><i class="fa-solid fa-wand-magic-sparkles"></i> Escopo do Projeto</span>
+                        <p class="char-quote">"O requisito não era bem esse..."</p>
+                        <div class="role">
+                            Representa o escopo dinâmico. Parece um objetivo simples, mas esconde camadas e requisitos não revelados na primeira reunião.
+                        </div>
+                    </div>
+
+                    <!-- DRAGÃO -->
+                    <div class="character-card parchment-card">
+                        <div class="character-image dragon">
+                            <img src="assets/images/dragao_giphy.gif" alt="Dragão do castelo" class="char-img-art">
+                        </div>
+                        <h3>Dragão</h3>
+                        <span><i class="fa-solid fa-fire"></i> Deadline / Risco</span>
+                        <p class="char-quote">"O tempo está acabando!"</p>
+                        <div class="role">
+                            Representa a pressão do prazo e os riscos do projeto. Quanto mais perto da entrega, mais assustadora ela fica.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 4 — O ERRO INICIAL: CENTRALIZAÇÃO (CENA III) -->
+        <section id="slide4" class="scene swamp-theme">
+            <div class="scene-background dark-swamp"></div>
+            <div class="scene-content">
+                <span class="scene-number"><i class="fa-solid fa-door-closed"></i> Cena III</span>
+                <h2>O Erro Inicial: Centralização</h2>
+                <p class="scene-text">
+                    No início da jornada, Shrek quer fazer tudo sozinho. "Cai fora do meu pântano!" representa a mentalidade do especialista que recusa ajuda.
+                </p>
+
+                <div class="split-view">
+                    <div class="split-box parchment-box hero-quote">
+                        <!-- GIF INTEIRO SEM CORTE -->
+                        <div class="gif-frame-full swamp-border">
+                            <img src="assets/images/shrek_swamp_door.gif" alt="Shrek na porta do pântano" class="scene-gif-full">
+                        </div>
+                        <h3><i class="fa-solid fa-quote-left"></i> Frases Clássicas da Centralização:</h3>
+                        <ul>
+                            <li><i class="fa-solid fa-circle-right text-gold"></i> "Deixa que eu faço, é mais rápido."</li>
+                            <li><i class="fa-solid fa-circle-right text-gold"></i> "Explicar para o time demora mais do que fazer."</li>
+                            <li><i class="fa-solid fa-circle-right text-gold"></i> "Depois eu aviso quando estiver pronto."</li>
+                        </ul>
+                    </div>
+
+                    <div class="split-box parchment-box problems-box">
+                        <h3><i class="fa-solid fa-triangle-exclamation"></i> Impacto no Longo Prazo:</h3>
+                        <div class="problem-tags">
+                            <span class="tag bad"><i class="fa-solid fa-xmark"></i> Retrabalho e Gargalos de Produção</span>
+                            <span class="tag bad"><i class="fa-solid fa-xmark"></i> Ilhas de Conhecimento e Falta de Registro</span>
+                            <span class="tag bad"><i class="fa-solid fa-xmark"></i> Dependência Crítica de Uma Só Pessoa</span>
+                            <span class="tag bad"><i class="fa-solid fa-xmark"></i> Burnout e Estresse na Liderança</span>
+                            <span class="tag bad"><i class="fa-solid fa-xmark"></i> Falta de Alinhamento da Equipe</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 5 — O BURRO REPRESENTA O CLIENTE (CENA IV) -->
+        <section id="slide5" class="scene swamp-theme">
+            <div class="scene-background"></div>
+            <div class="scene-content">
+                <span class="scene-number"><i class="fa-solid fa-comments"></i> Cena IV</span>
+                <h2>Interrupções vs. Rituais Ágeis</h2>
+                <p class="scene-text">
+                    Enquanto a equipe tenta focar no trabalho, o cliente (Burro) faz perguntas sem parar. Interrupções desorganizadas matam a produtividade.
+                </p>
+
+                <div class="chat-container parchment-box">
+                    <div class="chat-header">
+                        <div class="chat-user">
+                            <img src="assets/images/burro_chat.jpg" alt="Burro do Shrek" class="chat-avatar-gif">
+                            <span>Cliente Hiperativo (Burro)</span>
+                        </div>
+                        <button id="btn-spammed-daily" class="btn-action">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> Organizar em Rituais Scrum
+                        </button>
+                    </div>
+                    <div class="chat-body" id="chat-messages">
+                        <div class="chat-msg burro-msg">Burro: Já chegamos?</div>
+                        <div class="chat-msg burro-msg">Burro: E agora? Falta muito?</div>
+                        <div class="chat-msg burro-msg">Burro: Consegue colocar só mais uma alteraçãozinha rápida?</div>
+                    </div>
+                    <div class="scrum-solution" id="scrum-solution" style="display:none;">
+                        <h4><i class="fa-solid fa-circle-check"></i> Solução com Rituais Scrum:</h4>
+                        <div class="rituals-grid">
+                            <div class="ritual-card"><i class="fa-solid fa-clock"></i> <strong>Daily:</strong> Alinhamento rápido diário</div>
+                            <div class="ritual-card"><i class="fa-solid fa-eye"></i> <strong>Sprint Review:</strong> Demonstração estruturada</div>
+                            <div class="ritual-card"><i class="fa-solid fa-calendar-check"></i> <strong>Sprint Planning:</strong> Prioridades claras</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 6 — SCRUM EXPLICADO COM SHREK (CENA V) -->
+        <section id="slide6" class="scene swamp-theme">
+            <div class="scene-background"></div>
+            <div class="scene-content">
+                <span class="scene-number"><i class="fa-solid fa-list-ol"></i> Cena V</span>
+                <h2>Dividindo a Missão em Sprints</h2>
+                <p class="scene-text">
+                    Ao invés de tentar "Salvar a Princesa" em uma única entrega gigante e arriscada, dividimos a jornada em Sprints incrementais.
+                </p>
+
+                <div class="sprints-roadmap">
+                    <div class="sprint-card done parchment-card">
+                        <div class="sprint-badge">Sprint 1</div>
+                        <h4>Sair do Pântano</h4>
+                        <p>Planejamento e alinhamento do time</p>
+                        <span class="value-tag status-done"><i class="fa-solid fa-check"></i> ENTREGUE</span>
+                    </div>
+
+                    <div class="sprint-card done parchment-card">
+                        <div class="sprint-badge">Sprint 2</div>
+                        <h4>Atravessar a Floresta</h4>
+                        <p>Superação dos primeiros obstáculos</p>
+                        <span class="value-tag status-done"><i class="fa-solid fa-check"></i> ENTREGUE</span>
+                    </div>
+
+                    <div class="sprint-card active parchment-card">
+                        <div class="sprint-badge">Sprint 3</div>
+                        <h4>Invadir o Castelo</h4>
+                        <p>Enfrentamento do ambiente complexo</p>
+                        <span class="value-tag status-active"><i class="fa-solid fa-spinner fa-spin"></i> EM EXECUÇÃO</span>
+                    </div>
+
+                    <div class="sprint-card parchment-card">
+                        <div class="sprint-badge">Sprint 4</div>
+                        <h4>Escapar da Dragão</h4>
+                        <p>Gestão de riscos críticos e prazos</p>
+                        <span class="value-tag status-planned"><i class="fa-solid fa-calendar"></i> PLANEJADO</span>
+                    </div>
+
+                    <div class="sprint-card parchment-card">
+                        <div class="sprint-badge">Sprint 5</div>
+                        <h4>Entregar Fiona</h4>
+                        <p>Entrega final e aceite do cliente</p>
+                        <span class="value-tag status-final"><i class="fa-solid fa-flag-checkered"></i> META FINAL</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 7 — KANBAN NO CASTELO (CENA VI) -->
+        <section id="slide7" class="scene swamp-theme">
+            <div class="scene-background"></div>
+            <div class="scene-content">
+                <span class="scene-number"><i class="fa-solid fa-table-columns"></i> Cena VI</span>
+                <h2>Visualizando o Fluxo com Kanban</h2>
+                <p class="scene-text">
+                    Transparência é essencial. Quando todos enxergam as tarefas no quadro, os gargalos ficam visíveis. Clique nos cartões para movê-los!
+                </p>
+
+                <div class="kanban-board">
+                    <!-- A FAZER -->
+                    <div class="kanban-column parchment-box" id="col-todo">
+                        <h3><i class="fa-solid fa-list-check"></i> A Fazer</h3>
+                        <div class="kanban-cards">
+                            <div class="k-card" data-id="1">Atravessar a ponte sobre lava</div>
+                            <div class="k-card" data-id="2">Distrair a Dragão com o Burro</div>
+                        </div>
+                    </div>
+
+                    <!-- FAZENDO -->
+                    <div class="kanban-column parchment-box" id="col-doing">
+                        <h3><i class="fa-solid fa-bolt"></i> Em Progresso</h3>
+                        <div class="kanban-cards">
+                            <div class="k-card in-progress" data-id="3">Lutar contra os cavaleiros de Duloc</div>
+                        </div>
+                    </div>
+
+                    <!-- CONCLUÍDO -->
+                    <div class="kanban-column parchment-box" id="col-done">
+                        <h3><i class="fa-solid fa-circle-check"></i> Concluído</h3>
+                        <div class="kanban-cards">
+                            <div class="k-card completed" data-id="4">Atravessar a Floresta Encantada</div>
+                            <div class="k-card completed" data-id="5">Recrutar o Burro como parceiro</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 8 — O ESCOPO MUDOU! (CENA VII) -->
+        <section id="slide8" class="scene swamp-theme">
+            <div class="scene-background"></div>
+            <div class="scene-content">
+                <span class="scene-number"><i class="fa-solid fa-rotate"></i> Cena VII</span>
+                <h2>O Escopo Mudou! (Fiona Transforma-se)</h2>
+                <p class="scene-text">
+                    Quando tudo parecia alinhado, descobre-se que Fiona vira ogra ao anoitecer. Requisitos ocultos surgem em qualquer projeto real.
+                </p>
+
+                <div class="fiona-container parchment-box" id="fiona-box">
+                    <div class="fiona-media-frame magical-glow">
+                        <img id="fiona-img-gif" src="assets/images/fiona_humana_tenor.gif" alt="Princesa Fiona Humana" class="fiona-gif">
+                    </div>
+                    <h3 id="fiona-state-title">Fiona (Escopo Inicial: Princesa)</h3>
+                    <p id="fiona-state-desc">"O requisito inicial parecia simples e direto..."</p>
+
+                    <button id="btn-transform-fiona" class="btn-action pulse">
+                        <i class="fa-solid fa-moon"></i> Simular Chegada da Noite (Mudança de Escopo)
+                    </button>
+
+                    <div id="scope-warning" class="alert-box" style="display:none;">
+                        <i class="fa-solid fa-triangle-exclamation"></i> <strong>ALERTA DE MUDANÇA DE ESCOPO:</strong> Requisito oculto revelado! É preciso reavaliar o impacto no prazo e nos recursos antes de aceitar.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 9 — O DRAGÃO / DEADLINE (CENA VIII) -->
+        <section id="slide9" class="scene dragon-flames">
+            <div class="scene-background"></div>
+            <div class="scene-content">
+                <span class="scene-number"><i class="fa-solid fa-fire"></i> Cena VIII</span>
+                <h2>Enfrentando a Dragão (O Deadline)</h2>
+                <p class="scene-text">
+                    O Dragão não é vilão — é o prazo final. Quanto mais perto da data de entrega, maior e mais assustador ele se torna se o trabalho for deixado para o fim.
+                </p>
+
+                <div class="dragon-stage">
+                    <div class="dragon-media-frame fiery-frame">
+                        <img id="dragon-sprite" src="assets/images/dragao_giphy.gif" alt="Dragão cuspindo fogo" class="dragon-gif">
+                    </div>
+                    <div class="timer-container parchment-box">
+                        <div class="donkey-scared-frame">
+                            <img src="assets/images/burro_assustado.webp" alt="Burro assustado com o prazo" class="donkey-scared-gif">
+                        </div>
+                        <label><i class="fa-solid fa-stopwatch"></i> Prazo Restante do Projeto:</label>
+                        <div class="timer-bar-bg">
+                            <div class="timer-bar-fill" id="timer-fill"></div>
+                        </div>
+                    </div>
+                    <button id="btn-shrink-dragon" class="btn-action">
+                        <i class="fa-solid fa-shield-halved"></i> Aplicar Planejamento e Mitigar Risco
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 10 — GESTÃO DE PESSOAS (CENA IX) -->
+        <section id="slide10" class="scene swamp-theme">
+            <div class="scene-background"></div>
+            <div class="scene-content">
+                <span class="scene-number"><i class="fa-solid fa-brain"></i> Cena IX</span>
+                <h2>Evolução do Time & Soft Skills</h2>
+                <p class="scene-text">
+                    A maior conquista da missão não foi técnica, foi humana. O time aprendeu a colaborar e confiar uns nos outros.
+                </p>
+
+                <div class="skills-grid">
+                    <div class="skill-card parchment-card">
+                        <div class="s-avatar-frame">
+                            <img src="assets/images/shrek_deboche.gif" alt="Shrek" class="skill-avatar">
+                        </div>
+                        <h3>Shrek</h3>
+                        <span class="skill-title"><i class="fa-solid fa-crown"></i> Liderança & Delegação</span>
+                        <p>Aprendeu a ouvir a equipe, confiar na capacidade do grupo e parar de centralizar todas as decisões.</p>
+                    </div>
+
+                    <div class="skill-card parchment-card">
+                        <div class="s-avatar-frame">
+                            <img src="assets/images/burro_sorrindo.gif" alt="Burro" class="skill-avatar">
+                        </div>
+                        <h3>Burro</h3>
+                        <span class="skill-title"><i class="fa-solid fa-comments"></i> Comunicação Focada</span>
+                        <p>Aprendeu a canalizar expectativas, respeitar o espaço de trabalho técnico e apoiar nos momentos críticos.</p>
+                    </div>
+
+                    <div class="skill-card parchment-card">
+                        <div class="s-avatar-frame">
+                            <img src="assets/images/fiona_humana_tenor.gif" alt="Fiona" class="skill-avatar">
+                        </div>
+                        <h3>Fiona</h3>
+                        <span class="skill-title"><i class="fa-solid fa-eye"></i> Transparência</span>
+                        <p>Aprendeu a compartilhar sua real situação e alinhar expectativas com quem estava executando o resgate.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 11 — MATRIZ COMPARATIVA INTERATIVA (CENA X REMODELADA) -->
+        <section id="slide11" class="scene swamp-theme">
+            <div class="scene-background"></div>
+            <div class="scene-content">
+                <span class="scene-number"><i class="fa-solid fa-scale-balanced"></i> Cena X</span>
+                <h2>Matriz de Paralelos: Filme vs Gestão</h2>
+                <p class="scene-text">
+                    Explore os paralelos diretos entre os desafios enfrentados no filme Shrek e a realidade das metodologias ágeis.
+                </p>
+
+                <div class="matrix-grid">
+                    <!-- ITEM 1 -->
+                    <div class="matrix-card parchment-card">
+                        <div class="m-side m-film">
+                            <span class="m-icon-badge"><i class="fa-solid fa-crown"></i></span>
+                            <div>
+                                <small>FILME DO SHREK</small>
+                                <h4>Missão do Resgate</h4>
+                                <p>Salvar Fiona da torre do castelo</p>
+                            </div>
+                        </div>
+                        <div class="m-divider">
+                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        </div>
+                        <div class="m-side m-corp">
+                            <span class="m-icon-badge corp-badge"><i class="fa-solid fa-cubes"></i></span>
+                            <div>
+                                <small>MUNDO CORPORATIVO</small>
+                                <h4>Entrega do Produto (MVP)</h4>
+                                <p>Resolver a dor central do cliente</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 2 -->
+                    <div class="matrix-card parchment-card">
+                        <div class="m-side m-film">
+                            <span class="m-icon-badge"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                            <div>
+                                <small>FILME DO SHREK</small>
+                                <h4>Fiona Ogra à Noite</h4>
+                                <p>Segredo não revelado no início</p>
+                            </div>
+                        </div>
+                        <div class="m-divider">
+                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        </div>
+                        <div class="m-side m-corp">
+                            <span class="m-icon-badge corp-badge"><i class="fa-solid fa-shuffle"></i></span>
+                            <div>
+                                <small>MUNDO CORPORATIVO</small>
+                                <h4>Mudança de Escopo</h4>
+                                <p>Requisitos ocultos ou em evolução</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 3 -->
+                    <div class="matrix-card parchment-card">
+                        <div class="m-side m-film">
+                            <span class="m-icon-badge"><i class="fa-solid fa-dragon"></i></span>
+                            <div>
+                                <small>FILME DO SHREK</small>
+                                <h4>Dragão no Castelo</h4>
+                                <p>Obstáculo perigoso de fogo</p>
+                            </div>
+                        </div>
+                        <div class="m-divider">
+                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        </div>
+                        <div class="m-side m-corp">
+                            <span class="m-icon-badge corp-badge"><i class="fa-solid fa-clock"></i></span>
+                            <div>
+                                <small>MUNDO CORPORATIVO</small>
+                                <h4>Deadline & Riscos</h4>
+                                <p>Prazo final e gargalos críticos</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 4 -->
+                    <div class="matrix-card parchment-card">
+                        <div class="m-side m-film">
+                            <span class="m-icon-badge"><i class="fa-solid fa-comments"></i></span>
+                            <div>
+                                <small>FILME DO SHREK</small>
+                                <h4>Burro Questionador</h4>
+                                <p>"Já chegamos?" a todo instante</p>
+                            </div>
+                        </div>
+                        <div class="m-divider">
+                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        </div>
+                        <div class="m-side m-corp">
+                            <span class="m-icon-badge corp-badge"><i class="fa-solid fa-users"></i></span>
+                            <div>
+                                <small>MUNDO CORPORATIVO</small>
+                                <h4>Stakeholder & Dailies</h4>
+                                <p>Expectativas do cliente e rituais</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 5 -->
+                    <div class="matrix-card parchment-card">
+                        <div class="m-side m-film">
+                            <span class="m-icon-badge"><i class="fa-solid fa-user-shield"></i></span>
+                            <div>
+                                <small>FILME DO SHREK</small>
+                                <h4>Shrek Isolado no Pântano</h4>
+                                <p>"Eu faço tudo sozinho!"</p>
+                            </div>
+                        </div>
+                        <div class="m-divider">
+                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        </div>
+                        <div class="m-side m-corp">
+                            <span class="m-icon-badge corp-badge"><i class="fa-solid fa-sitemap"></i></span>
+                            <div>
+                                <small>MUNDO CORPORATIVO</small>
+                                <h4>Gargalo de Liderança</h4>
+                                <p>Centralização vs Delegação Ágil</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ITEM 6 -->
+                    <div class="matrix-card parchment-card">
+                        <div class="m-side m-film">
+                            <span class="m-icon-badge"><i class="fa-solid fa-route"></i></span>
+                            <div>
+                                <small>FILME DO SHREK</small>
+                                <h4>Jornada por Etapas</h4>
+                                <p>Pântano -> Floresta -> Castelo</p>
+                            </div>
+                        </div>
+                        <div class="m-divider">
+                            <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                        </div>
+                        <div class="m-side m-corp">
+                            <span class="m-icon-badge corp-badge"><i class="fa-solid fa-bars-staggered"></i></span>
+                            <div>
+                                <small>MUNDO CORPORATIVO</small>
+                                <h4>Sprints Incrementais</h4>
+                                <p>Ciclos de valor contínuo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 12 — GAMIFICAÇÃO & CONQUISTAS DO PÂNTANO (CENA XI REMODELADA) -->
+        <section id="slide12" class="scene swamp-theme">
+            <div class="scene-background victory-bg"></div>
+            <div class="scene-content">
+                <span class="scene-number"><i class="fa-solid fa-trophy"></i> Cena XI</span>
+                <h2>Salão de Conquistas do Pântano</h2>
+                <p class="scene-text">
+                    Nenhum projeto é entregue por apenas uma pessoa. Clique nos escudos de conquista para desbloquear as lições do time!
+                </p>
+
+                <div class="hall-of-achievements">
+                    <!-- TROFÉU 1 -->
+                    <div class="trophy-card parchment-card" data-xp="100">
+                        <div class="trophy-badge"><i class="fa-solid fa-comments"></i></div>
+                        <h3>Comunicação Focada</h3>
+                        <span class="trophy-subtitle">Alinhamento Diário</span>
+                        <p>Eliminar os ruídos e alinhar expectativas entre o cliente e quem executa.</p>
+                        <div class="xp-banner">+100 XP DESBLOQUEADO</div>
+                        <button class="btn-claim"><i class="fa-solid fa-star"></i> Celebrar Conquista</button>
+                    </div>
+
+                    <!-- TROFÉU 2 -->
+                    <div class="trophy-card parchment-card" data-xp="100">
+                        <div class="trophy-badge"><i class="fa-solid fa-map-location-dot"></i></div>
+                        <h3>Sprints Incrementais</h3>
+                        <span class="trophy-subtitle">Meta Dividida</span>
+                        <p>Dividir o grande desafio em etapas menores e mensuráveis.</p>
+                        <div class="xp-banner">+100 XP DESBLOQUEADO</div>
+                        <button class="btn-claim"><i class="fa-solid fa-star"></i> Celebrar Conquista</button>
+                    </div>
+
+                    <!-- TROFÉU 3 -->
+                    <div class="trophy-card parchment-card" data-xp="100">
+                        <div class="trophy-badge"><i class="fa-solid fa-handshake"></i></div>
+                        <h3>Colaboração em Equipe</h3>
+                        <span class="trophy-subtitle">Time Multidisciplinar</span>
+                        <p>Shrek, Burro e Fiona combinam forças diferentes para vencer o castelo.</p>
+                        <div class="xp-banner">+100 XP DESBLOQUEADO</div>
+                        <button class="btn-claim"><i class="fa-solid fa-star"></i> Celebrar Conquista</button>
+                    </div>
+
+                    <!-- TROFÉU 4 -->
+                    <div class="trophy-card parchment-card" data-xp="100">
+                        <div class="trophy-badge"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+                        <h3>Adaptabilidade ao Escopo</h3>
+                        <span class="trophy-subtitle">Flexibilidade Ágil</span>
+                        <p>Aceitar requisitos imprevisíveis sem perder o foco na entrega.</p>
+                        <div class="xp-banner">+100 XP DESBLOQUEADO</div>
+                        <button class="btn-claim"><i class="fa-solid fa-star"></i> Celebrar Conquista</button>
+                    </div>
+
+                    <!-- TROFÉU 5 -->
+                    <div class="trophy-card parchment-card" data-xp="100">
+                        <div class="trophy-badge"><i class="fa-solid fa-crown"></i></div>
+                        <h3>Liderança Descentralizada</h3>
+                        <span class="trophy-subtitle">Delegação & Confiança</span>
+                        <p>Parar de tentar fazer tudo sozinho e confiar nas habilidades do grupo.</p>
+                        <div class="xp-banner">+100 XP DESBLOQUEADO</div>
+                        <button class="btn-claim"><i class="fa-solid fa-star"></i> Celebrar Conquista</button>
+                    </div>
+                </div>
+
+                <div class="final-actions margin-top-20">
+                    <button id="btn-go-thanks" class="btn-action primary-btn">
+                        Ir para o Encerramento <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 13 — AGRADECIMENTO & ENCERRAMENTO (FINAL) -->
+        <section id="slide13" class="scene victory-theme">
+            <div class="scene-background victory-bg"></div>
+            <div class="scene-content">
+                <div class="thanks-container parchment-box fairytale-scroll">
+                    <div class="thanks-gif-frame">
+                        <img src="assets/images/shrek_fiona_kiss.webp" alt="Shrek e Fiona felizes para sempre" class="thanks-gif">
+                    </div>
+                    <span class="scene-number"><i class="fa-solid fa-heart"></i> Fim da Jornada</span>
+                    <h2>Muito Obrigado!</h2>
+                    <p class="thanks-subtitle">
+                        "E viveram felizes, ágeis e organizados para sempre!"
+                    </p>
+                    <p class="scene-text">
+                        Apresentação criada para demonstrar conceitos de Scrum, Kanban, Liderança e Gestão de Pessoas com o universo de Shrek.
+                    </p>
+                    <div class="final-buttons">
+                        <button id="btn-restart" class="btn-action main-start-btn">
+                            <i class="fa-solid fa-rotate-right"></i> Recomeçar Apresentação
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- SCRIPTS -->
+    <script src="js/audio.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

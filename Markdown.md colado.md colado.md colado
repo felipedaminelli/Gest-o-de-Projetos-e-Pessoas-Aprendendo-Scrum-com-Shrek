@@ -1,0 +1,558 @@
+# Gestão de Projetos e Pessoas
+
+## Aprendendo Scrum com Shrek
+
+A ideia é que a apresentação pareça um minifilme. Em vez de apenas mostrar conteúdo, cada slide deve funcionar como uma cena da história, com animações, sons e pequenas interações. Como será em HTML, é possível criar transições cinematográficas, efeitos de paralaxe, trilha sonora ambiente, falas dos personagens em balões, um quadro Kanban animado e até pequenos efeitos sonoros.
+
+---
+
+# Slide 1 — Abertura
+
+## Título
+
+# Gestão de Projetos e Pessoas
+
+### Subtítulo
+
+**Aprendendo Scrum com Shrek**
+
+---
+
+### Visual
+
+![Image](https://images.openai.com/static-rsc-4/kLMugJkrsvQSajSWphzhCQ7aTThmDeZZJupVLYpR-sntQcBkySXT2nBj66V93E1SFwrM5Kff7bYC4KG-2uD81AttJhwmKnf-XPAQXEt6wXghg_R7NhukC79P6MjIb-0LZpHa8pbwyS5arksu88ntFck7eEBTkV9SsAP5xxYf3Ncjk4VDZCaQWKhEDiWfyfik?purpose=fullsize)
+
+![Image](https://images.openai.com/static-rsc-4/tbLPSGU1OaFNBJQT7Q3g4XasZtYorrwDsW8eVm1kWxRMq0EtSMdyKr6Z45yDPrhkb4Utauxcdcx6IA2RTjWj3fqBKf-NrFdko5N58xwu72c55Ii9B2cQ1egRwoashOTBlgkxxpX2bH75vOEoU7TJXxD87f-QirEJ0MzGNFIuCOUyYGZZhOXupG7677MPwdJe?purpose=fullsize)
+
+![Image](https://images.openai.com/static-rsc-4/XRXrM35bdIcEbi6MeMR239TLNBbMQj2F8_3WO0V__fHM8eGKla_d4r6F8RCktSRMYaSjy8EIziwQw6ymKIBpueLkenjKCsc8f1FqIZdcB7H-lEb4HTx6HZ_W2AE8dEBUBgl91MEPagBNDLOwB8w4wltH94RtOp_qFSAF0-u4vo5fSLkefqSULRD4LdC5BEBF?purpose=fullsize)
+
+![Image](https://images.openai.com/static-rsc-4/DPcd5RBkVA-bRgEfTs15hssFh9fB70IqDvLj4_NDmCVekKD_vkWB9a5hYak2Gxz7875NlPubI_jF4izKkan28kT8AkqcXe5GEtasZl6rhELt5lN5TRE_zxVLUTVHfoUoyIPgd1empIzhP2GrRf17WXYArTqeWwSffig4RP90PrWz21lTF6g7j4xBmGUzIUJD?purpose=fullsize)
+
+* Fundo animado do pântano
+* Névoa em movimento
+* Música medieval divertida
+* Título surgindo como a abertura de um conto de fadas
+
+Ao clicar em "Começar", uma animação apresenta o mapa da jornada.
+
+---
+
+# Slide 2 — O desafio do projeto
+
+## Todo projeto começa com um problema.
+
+No filme, Lord Farquaad precisa que Fiona seja resgatada.
+
+Na vida real, uma empresa precisa desenvolver um software, lançar um produto ou resolver um problema.
+
+**Projeto = uma missão com objetivo definido.**
+
+Assim como qualquer projeto:
+
+* existe um objetivo;
+* existe um prazo;
+* existem recursos limitados;
+* existem riscos.
+
+A missão:
+
+> Resgatar Fiona.
+
+No mundo corporativo:
+
+> Entregar um produto funcionando.
+
+---
+
+### Visual
+
+Mapa da jornada estilo RPG.
+
+No lado esquerdo:
+
+"Pântano"
+
+No centro:
+
+"Floresta"
+
+Depois:
+
+"Castelo"
+
+No final:
+
+"Resgate de Fiona"
+
+Cada etapa é destacada conforme a apresentação avança.
+
+---
+
+# Slide 3 — Conhecendo o time
+
+## Nenhum projeto acontece sozinho.
+
+Aqui aparecem os personagens.
+
+![Image](https://images.openai.com/static-rsc-4/lrQPNSPHyRlujCKCi8nY3hDVT5kAptf0Lc0bmO4mDDSGK5j3iZITdTdqm6aUY9fK0H-WW2vmpVSdnHZsQ4Ke1Ju8RFAUMmMkvo1hIhvMNgDMQHTqZfWgMzv5VjNGJXYmZRbrjP4StGeABb0FCbPnf0M4jiYvc8MWcIuydg6TUvc_aGsETtJtLuP-X3nH_Qg7?purpose=fullsize)
+
+![Image](https://images.openai.com/static-rsc-4/GJj7q7FTYnMk3R64p7ARYZCDa2S4hwlv4MaNkgQ-AUohL7NY2bkFXCgKjy7DGhHm_XObBM2kOsoAiGmmy8W9AwiWPN3bXYZEA124xxtGWZBH-8kMpmL0Q7OyQGerlOm_jO5mE4U-ApCm7zeX3_bJWfTuQfshPfuOCc_KsXRI9hPncZNJA_WMlC6AyYGwynkY?purpose=fullsize)
+
+![Image](https://images.openai.com/static-rsc-4/f9-ORNEXiM4WGXOz6uglq1n2plaTLJ9nR7AYPwZtpzPBJA-hjUZ5052OP_YMe0i9F-MeGSodtGFYAEzopu-QWf17oQK_HjqY7Gd21Ifp6Q7R_XQQXDdYSC1Lq5eN5R3yQlTHOmfcAtQ1arcrVpJw_NpyGeowUGAvX-xr_9fHzsJq5X_hnsHbWCe5BAQTnVsn?purpose=fullsize)
+
+![Image](https://images.openai.com/static-rsc-4/Miaivw1edBWh-qDy7huE99AKUp5lWDGbdUN_sveHg4Ysf7o9ogQ725GkKYi5QXXJGO1_M4vfUdoDbPhEXR1Q8cWP0s0vI1NQ9Gr7FI8r_-aKIlRxbv8qYdbcmfMgmEPFgoE7QMTYGx84vqSQWDBQ_HDMLm343mRVlrSGuDDvDciuYTbLxw0C_LbQwbOL8rv9?purpose=fullsize)
+
+### Shrek
+
+O desenvolvedor experiente.
+
+Características:
+
+* altamente competente;
+* prefere trabalhar sozinho;
+* comunica-se pouco;
+* acredita que ninguém faz melhor que ele.
+
+Problema:
+
+Centraliza conhecimento.
+
+Na empresa isso gera:
+
+* gargalos;
+* dependência de uma única pessoa;
+* sobrecarga e esgotamento.
+
+---
+
+### Burro
+
+É o cliente.
+
+Características:
+
+* cheio de ideias;
+* faz perguntas o tempo inteiro;
+* muda de assunto rapidamente;
+* quer acompanhar tudo.
+
+Frase clássica:
+
+> "Já chegamos?"
+
+Na empresa vira:
+
+> "Só passando para saber como está."
+
+---
+
+### Fiona
+
+É o escopo.
+
+Parece simples.
+
+Mas...
+
+possui diversas camadas escondidas.
+
+Durante o projeto surgem requisitos inesperados.
+
+Ela representa perfeitamente:
+
+Escopo variável.
+
+---
+
+### Dragão
+
+Não é o vilão.
+
+É o prazo.
+
+Quanto mais perto da entrega...
+
+mais assustador ele fica.
+
+---
+
+# Slide 4 — O erro inicial
+
+Logo no início...
+
+Shrek quer fazer tudo sozinho.
+
+Essa é uma situação extremamente comum em projetos.
+
+Frases clássicas:
+
+"Deixa que eu faço."
+
+"Explicar demora mais."
+
+"Depois eu reviso."
+
+No começo parece mais rápido.
+
+No longo prazo...
+
+vira um desastre.
+
+---
+
+### Problemas gerados
+
+* pouca colaboração
+* baixa documentação
+* retrabalho
+* dependência da equipe
+
+---
+
+### Visual
+
+Tela dividida.
+
+Esquerda:
+
+Shrek caminhando sozinho.
+
+Direita:
+
+Lista crescendo:
+
+❌ Retrabalho
+
+❌ Gargalo
+
+❌ Estresse
+
+Cada item aparece conforme ele anda.
+
+---
+
+# Slide 5 — O Burro representa o cliente
+
+Todo gerente já viveu isso.
+
+Enquanto a equipe trabalha...
+
+o cliente pergunta:
+
+> Já terminou?
+
+Cinco minutos depois:
+
+> E agora?
+
+Depois:
+
+> Consegue colocar só mais uma coisinha?
+
+Essas interrupções diminuem produtividade.
+
+Por isso existem rituais ágeis.
+
+---
+
+### Aqui entra o Scrum.
+
+Em vez de responder a cada cinco minutos...
+
+existem momentos específicos de alinhamento:
+
+* Daily, para sincronizar o time;
+* Sprint Review, para apresentar resultados;
+* Sprint Planning, para planejar o próximo ciclo.
+
+Assim, o cliente acompanha o progresso de forma organizada, principalmente na Sprint Review.
+
+---
+
+### Visual
+
+Chat aparecendo sem parar.
+
+Burro enviando mensagens:
+
+📩
+
+📩
+
+📩
+
+📩
+
+📩
+
+Até aparecer um botão gigante:
+
+**Sprint Review**
+
+As mensagens param.
+
+---
+
+# Slide 6 — Scrum explicado com Shrek
+
+Agora a missão é dividida em pequenas entregas.
+
+Em vez de:
+
+"Salvar Fiona."
+
+Dividimos em Sprints.
+
+Sprint 1
+
+Sair do pântano.
+
+Sprint 2
+
+Atravessar a floresta.
+
+Sprint 3
+
+Invadir o castelo.
+
+Sprint 4
+
+Escapar do Dragão.
+
+Sprint 5
+
+Entregar Fiona.
+
+Cada Sprint torna o progresso visível e, em projetos reais, deve buscar entregar valor utilizável.
+
+---
+
+### Visual
+
+Quadro estilo roadmap.
+
+Cada Sprint fica verde quando termina.
+
+Com pequenas animações.
+
+---
+
+# Slide 7 — Kanban
+
+Toda equipe precisa visualizar o trabalho.
+
+No castelo imaginamos um Kanban.
+
+## A Fazer
+
+* atravessar a ponte;
+* localizar Fiona;
+* distrair o Dragão.
+
+---
+
+## Fazendo
+
+* lutar contra os cavaleiros.
+
+---
+
+## Concluído
+
+* sair do pântano.
+
+---
+
+### Conceito
+
+Quando todos enxergam o fluxo...
+
+há menos confusão.
+
+Mais organização.
+
+Mais previsibilidade.
+
+---
+
+### Visual
+
+Kanban totalmente animado.
+
+Os cartões deslizam automaticamente.
+
+---
+
+# Slide 8 — O escopo mudou!
+
+Quando tudo parecia simples...
+
+descobrimos que Fiona vira ogra.
+
+Ou seja...
+
+o requisito escondido apareceu.
+
+É exatamente o famoso:
+
+> "Só mais uma pequena alteração."
+
+Mudança de escopo acontece.
+
+O problema não é mudar.
+
+O problema é mudar sem planejamento.
+
+---
+
+### Aqui entra a gestão de mudanças
+
+Antes de aceitar uma alteração, é preciso avaliar:
+
+* impacto;
+* prazo;
+* recursos;
+* prioridades.
+
+---
+
+### Visual
+
+Durante a apresentação...
+
+Fiona literalmente se transforma.
+
+A tela muda de cor.
+
+Tudo escurece.
+
+Surge a frase:
+
+Mudança de escopo detectada.
+
+---
+
+# Slide 9 — O Dragão (prazo)
+
+O Dragão nunca desaparece.
+
+Quanto mais perto da entrega...
+
+maior ele parece.
+
+Quando a equipe deixa tudo para o final...
+
+o Dragão cresce.
+
+Quando há planejamento...
+
+o Dragão continua grande...
+
+mas controlável.
+
+---
+
+### Visual
+
+Barra de prazo diminuindo.
+
+O Dragão vai aumentando de tamanho conforme a barra chega ao fim.
+
+Som de batimentos cardíacos acelerando.
+
+---
+
+# Slide 10 — Gestão de Pessoas
+
+A maior evolução não é técnica.
+
+É humana.
+
+Shrek aprende a:
+
+* delegar;
+* confiar;
+* ouvir;
+* cooperar.
+
+Burro aprende a respeitar o espaço dos outros.
+
+Fiona aprende a compartilhar sua realidade.
+
+Todos evoluem.
+
+---
+
+### Conceito
+
+Projetos são feitos por pessoas.
+
+Não por planilhas.
+
+---
+
+### Visual
+
+Os três caminhando juntos.
+
+Cada personagem representa uma habilidade:
+
+* comunicação;
+* confiança;
+* colaboração.
+
+---
+
+# Slide 11 — Lições para empresas
+
+O filme inteiro resume boas práticas de gestão.
+
+| Filme   | Gestão                |
+| ------- | --------------------- |
+| Missão  | Projeto               |
+| Fiona   | Escopo                |
+| Dragão  | Prazo                 |
+| Burro   | Cliente/Stakeholder   |
+| Shrek   | Líder Técnico         |
+| Castelo | Ambiente complexo     |
+| Ponte   | Risco                 |
+| Jornada | Sprint                |
+| Amigos  | Time multidisciplinar |
+
+A cada linha, uma animação conecta os dois lados da tabela.
+
+---
+
+# Slide 12 — Conclusão
+
+## Moral da história
+
+Nenhum projeto é entregue apenas por talento.
+
+Projetos bem-sucedidos acontecem quando existe:
+
+* comunicação clara;
+* colaboração entre as pessoas;
+* adaptação às mudanças;
+* organização do trabalho;
+* liderança que desenvolve o time.
+
+Assim como na jornada de Shrek, o sucesso não veio porque ele era o mais forte, mas porque aprendeu a confiar na equipe, adaptar o plano quando o escopo mudou e enfrentar os desafios em conjunto.
+
+---
+
+# Ideias extras para surpreender (HTML)
+
+Como a apresentação será desenvolvida em HTML, você pode explorar recursos que vão além dos slides tradicionais:
+
+* **Tela inicial interativa:** um livro de contos se abre e inicia a apresentação.
+* **Parallax:** o pântano, a floresta e o castelo têm camadas de profundidade que se movem conforme a transição.
+* **Trilha sonora dinâmica:** música tranquila durante o planejamento e trilha mais intensa quando o Dragão (prazo) aparece.
+* **Efeitos sonoros:** relincho do Burro ao surgir uma nova mensagem do "cliente", rugido do Dragão quando o prazo aperta e som de pergaminho ao trocar de slide.
+* **Kanban interativo:** cartões podem ser arrastados entre "A Fazer", "Fazendo" e "Concluído" durante a explicação.
+* **Transformação da Fiona:** animação em que a princesa muda para ogra ao anoitecer, simbolizando a descoberta de requisitos ocultos.
+* **Barra de Sprint:** um indicador de progresso acompanha toda a apresentação, preenchendo conforme os slides avançam.
+* **Easter eggs:** ao clicar em determinados elementos (como a cebola do Shrek), aparecem frases como "Projetos têm camadas!" ou "Nem todo requisito está visível na primeira reunião."
+* **Tela final gamificada:** uma mensagem de "Missão Concluída" com medalhas representando competências conquistadas: Comunicação, Planejamento, Colaboração, Adaptabilidade e Liderança.
+
+Essa abordagem transforma a apresentação em uma experiência imersiva, mantendo o humor característico de *Shrek* enquanto explica, de forma memorável, conceitos reais de gestão de projetos, metodologias ágeis e trabalho em equipe.

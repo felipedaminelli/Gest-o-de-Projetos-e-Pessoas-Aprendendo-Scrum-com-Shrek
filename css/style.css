@@ -1,0 +1,1527 @@
+/* =====================================================
+   GESTÃO DE PROJETOS COM SHREK
+   STYLE.CSS - AMBIENTAÇÃO DO PÂNTANO & REINO
+===================================================== */
+
+:root {
+    --swampGreen: #5c7c29;
+    --swampBright: #8bbd38;
+    --swampDark: #0f210b;
+    --swampMud: #4a3423;
+    --gold: #ffd700;
+    --goldMuted: #d4af37;
+    --lightParchment: #f4e8c1;
+    --dark: #050904;
+    --dragonRed: #c84121;
+    --dragonDark: #45150c;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    background: var(--dark);
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    width: 100%;
+}
+
+/* ==========================
+   CAMADAS GLOBAIS DE FOLHAS E VAGALUMES (TODOS OS SLIDES)
+========================== */
+
+.global-leaves, .global-fireflies {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+    overflow: hidden;
+}
+
+/* ==========================
+   PÔSTER RÚSTICO VOANDO PELA TELA COMO AS FOLHAS
+========================== */
+
+.ogre-poster-corner {
+    position: fixed;
+    top: -50px;
+    right: -180px;
+    z-index: 12;
+    animation: posterFlyAcross 14s ease-in-out infinite;
+    pointer-events: auto;
+}
+
+@keyframes posterFlyAcross {
+    0% {
+        transform: translate(0, 0) rotate(20deg) scale(0.85);
+        opacity: 0;
+    }
+    8% {
+        opacity: 1;
+    }
+    88% {
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-125vw, 105vh) rotate(-40deg) scale(1.1);
+        opacity: 0;
+    }
+}
+
+.ogre-poster-corner:hover {
+    animation-play-state: paused;
+    transform: scale(1.3) rotate(0deg);
+    z-index: 999;
+}
+
+.ogre-poster-img {
+    width: 160px;
+    height: auto;
+    border-radius: 12px;
+    border: 3px solid #7a4f26;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 20px rgba(255, 215, 0, 0.4);
+    display: block;
+}
+
+/* ==========================
+   LOADER DO LIVRO DE CONTOS
+========================== */
+
+#loader {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #0b170c;
+    z-index: 99999;
+    transition: opacity 0.8s ease;
+    cursor: pointer;
+}
+
+#loader h2 {
+    margin-top: 30px;
+    font-size: 20px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    color: var(--gold);
+    text-align: center;
+    font-family: 'Cinzel', serif;
+    max-width: 600px;
+    padding: 0 20px;
+}
+
+.loader-tip {
+    margin-top: 15px;
+    font-size: 13px;
+    color: #a8b896;
+    font-style: italic;
+}
+
+.book {
+    width: 95px;
+    height: 75px;
+    border-radius: 10px;
+    background: #5a3d21;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .8);
+    border: 3px solid var(--gold);
+}
+
+.page {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: var(--lightParchment);
+    right: 0;
+    transform-origin: left;
+    animation: page 1.2s infinite ease;
+}
+
+@keyframes page {
+    0% { transform: rotateY(0deg); }
+    50% { transform: rotateY(-160deg); }
+    100% { transform: rotateY(0); }
+}
+
+/* ==========================
+   BARRA FIXA SUPERIOR & HUD
+========================== */
+
+#progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10001;
+}
+
+#bar {
+    width: 7.69%; /* 1/13 */
+    height: 100%;
+    background: linear-gradient(90deg, var(--swampGreen), var(--gold));
+    box-shadow: 0 0 10px var(--gold);
+    transition: width 0.4s ease;
+}
+
+#presentation-hud {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 92%;
+    max-width: 1200px;
+    z-index: 10000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(18, 36, 15, 0.95);
+    backdrop-filter: blur(12px);
+    padding: 10px 22px;
+    border-radius: 35px;
+    border: 2px solid var(--swampGreen);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.hud-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.hud-icon {
+    color: var(--gold);
+    font-size: 18px;
+    filter: drop-shadow(0 0 6px var(--gold));
+}
+
+.hud-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--gold);
+    letter-spacing: 2px;
+}
+
+.hud-counter {
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--goldMuted);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 15px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.hud-controls {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hud-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.hud-btn i {
+    color: var(--gold);
+}
+
+.hud-btn:hover {
+    background: var(--swampGreen);
+    border-color: var(--gold);
+    transform: translateY(-2px);
+}
+
+.highlight-btn {
+    background: rgba(255, 215, 0, 0.15);
+    border-color: var(--gold);
+    color: var(--gold);
+}
+
+.primary-btn {
+    background: linear-gradient(45deg, var(--gold), #e5c97a);
+    color: #2c1d0d;
+    border: none;
+    font-weight: 700;
+}
+
+.primary-btn i { color: #2c1d0d; }
+
+.primary-btn:hover {
+    background: linear-gradient(45deg, #fff099, var(--gold));
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+.hud-divider {
+    width: 1px;
+    height: 24px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 0 4px;
+}
+
+/* ==========================
+   ESTRUTURA GERAL DAS CENAS
+========================== */
+
+.scene {
+    scroll-snap-align: start;
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding: 100px 30px 60px 30px;
+}
+
+.swamp-theme {
+    background: radial-gradient(circle at center, #23451b 0%, #10260c 60%, #040903 100%);
+}
+
+.scene-background {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top, rgba(92, 124, 41, 0.3), transparent 70%);
+    pointer-events: none;
+}
+
+.scene-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.scene-number {
+    letter-spacing: 4px;
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: 15px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+    padding: 6px 16px;
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--goldMuted);
+    border-radius: 20px;
+}
+
+.scene h2 {
+    margin-top: 10px;
+    font-size: 40px;
+    font-family: 'Cinzel', serif;
+    color: white;
+    text-shadow: 0 3px 12px rgba(0,0,0,0.9);
+}
+
+.scene-text {
+    margin: 20px auto;
+    max-width: 750px;
+    line-height: 1.8;
+    font-size: 17px;
+    color: #e0e6d8;
+}
+
+/* ESTILO DE PERGAMINHO PANTANOSO DE MADEIRA */
+
+.parchment-box, .parchment-card {
+    background: linear-gradient(180deg, rgba(32, 54, 23, 0.92), rgba(15, 28, 11, 0.95));
+    border: 2px solid var(--swampGreen);
+    border-radius: 18px;
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.7), 0 12px 35px rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    transition: all 0.4s ease;
+}
+
+.parchment-box:hover, .parchment-card:hover {
+    border-color: var(--gold);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.7), 0 15px 40px rgba(255, 215, 0, 0.25);
+}
+
+/* BOTÕES DE AÇÃO COM ÍCONES DE DESTAQUE */
+
+.btn-action {
+    background: linear-gradient(45deg, var(--gold), #e5c97a);
+    color: #2c1d0d;
+    font-weight: 700;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-action i {
+    font-size: 18px;
+    color: #2c1d0d;
+}
+
+.btn-action:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(255, 215, 0, 0.4);
+}
+
+.main-start-btn {
+    font-size: 19px;
+    padding: 16px 38px;
+}
+
+.pulse {
+    animation: pulse-anim 2s infinite;
+}
+
+@keyframes pulse-anim {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.04); }
+}
+
+/* =====================================================
+   SLIDE 1 — ABERTURA CINEMATOGRÁFICA
+===================================================== */
+
+.cinematic-slide {
+    position: relative;
+    z-index: 1;
+}
+
+.sky-dark {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top, #142e18 0%, #09170b 50%, #030804 100%);
+    pointer-events: none;
+}
+
+.moon-glowing {
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    background: #fff8d8;
+    top: 60px;
+    right: 120px;
+    filter: blur(1px);
+    box-shadow: 0 0 40px #fff, 0 0 140px rgba(255, 255, 180, .6);
+    pointer-events: none;
+}
+
+.forest-background-parallax {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at bottom, rgba(77, 104, 36, 0.25), transparent 70%);
+    pointer-events: none;
+}
+
+.smoke-layer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(180deg, transparent, rgba(30, 48, 22, 0.4));
+    filter: blur(20px);
+    pointer-events: none;
+}
+
+.fireflies-container, .leaves-container {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.flying-leaf {
+    position: fixed;
+    width: 18px;
+    height: 18px;
+    background: linear-gradient(135deg, #7cad32, #476b1f);
+    border-radius: 0 70% 0 70%;
+    opacity: 0.9;
+    box-shadow: 0 0 12px rgba(124, 173, 50, 0.7);
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.8));
+    pointer-events: none;
+    animation: leafFly linear infinite;
+    z-index: 6;
+}
+
+@keyframes leafFly {
+    0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.95; }
+    90% { opacity: 0.95; }
+    100% { transform: translate(-130vw, 110vh) rotate(540deg); opacity: 0; }
+}
+
+#slide1-content {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.hero-gif-container {
+    width: 170px;
+    height: 170px;
+    margin: 0 auto 20px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--gold);
+    box-shadow: 0 0 35px var(--gold);
+}
+
+.hero-swamp-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cinematic-title {
+    margin-top: 15px;
+    font-size: 52px;
+    line-height: 1.2;
+    font-family: 'Cinzel', serif;
+    color: #ffffff;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.95), 0 0 10px rgba(0,0,0,0.8);
+}
+
+.cinematic-title span {
+    color: var(--gold);
+    font-size: 36px;
+    display: block;
+    margin-top: 12px;
+    font-weight: 700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+}
+
+.cta-box {
+    margin-top: 30px;
+}
+
+/* ==========================
+   SLIDE 2 — CENA I
+========================== */
+
+.mission-card {
+    margin: 20px auto;
+    max-width: 780px;
+    padding: 22px;
+    overflow: hidden;
+}
+
+.mission-banner {
+    width: 100%;
+    height: 160px;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border: 2px solid var(--swampGreen);
+}
+
+.banner-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mission-title {
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    text-align: left;
+}
+
+.mission-item {
+    font-size: 14px;
+    line-height: 1.5;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 16px;
+    border-radius: 12px;
+    border-left: 4px solid var(--gold);
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.m-badge {
+    background: linear-gradient(135deg, var(--gold), #c4962c);
+    color: #2c1d0d;
+    font-size: 15px;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+}
+
+.mission-item p {
+    font-size: 13px;
+    color: #ccc;
+    margin-top: 3px;
+}
+
+.journey {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.step {
+    width: 105px;
+    transition: .4s;
+    opacity: .4;
+    transform: scale(.9);
+    text-align: center;
+}
+
+.step.active {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.icon {
+    width: 65px;
+    height: 65px;
+    margin: 0 auto 6px auto;
+    border-radius: 50%;
+    background: #1b2e18;
+    border: 2px solid var(--swampGreen);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: var(--gold);
+    box-shadow: 0 0 15px rgba(0, 0, 0, .5);
+}
+
+.step.active .icon {
+    background: var(--swampGreen);
+    border-color: var(--gold);
+    color: #ffffff;
+    box-shadow: 0 0 25px var(--gold);
+}
+
+.line {
+    width: 50px;
+    height: 4px;
+    background: #354b2f;
+    border-radius: 20px;
+}
+
+/* ==========================
+   SLIDE 3 — CENA II (TIME)
+========================== */
+
+.team-scene {
+    background: radial-gradient(circle at center, #233b1e 0%, #0d1a0b 100%);
+}
+
+.team-background {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(120deg, transparent, rgba(92, 124, 41, 0.15), transparent);
+}
+
+.characters {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 18px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.character-card {
+    width: 230px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.character-card:hover {
+    transform: translateY(-10px) rotateY(5deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .7);
+}
+
+.character-image {
+    width: 105px;
+    height: 105px;
+    margin: auto;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    border: 3px solid var(--gold);
+    transition: .4s;
+}
+
+.char-img-art {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.character-card:hover .character-image {
+    transform: scale(1.1) rotate(4deg);
+    box-shadow: 0 0 25px var(--gold);
+}
+
+.character-card h3 {
+    margin-top: 14px;
+    font-size: 24px;
+    font-family: 'Cinzel', serif;
+}
+
+.character-card span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 4px;
+    color: var(--gold);
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.char-quote {
+    margin-top: 10px;
+    font-style: italic;
+    font-size: 13px;
+    color: #eee;
+    padding: 6px 8px;
+    background: rgba(0,0,0,0.3);
+    border-radius: 8px;
+}
+
+.role {
+    margin-top: 12px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #bfc7b7;
+}
+
+/* ==========================
+   SLIDE 4 — CENTRALIZAÇÃO & GIF INTEIRO
+========================== */
+
+.dark-swamp {
+    background: radial-gradient(circle, #182a17, #050904);
+}
+
+.split-view {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    margin-top: 25px;
+    text-align: left;
+}
+
+.split-box { padding: 22px; }
+
+.swamp-border {
+    border: 2px solid var(--swampGreen);
+    box-shadow: 0 0 20px rgba(92, 124, 41, 0.4);
+}
+
+/* MOSTRA O GIF INTEIRO DO SHREK SEM NENHUM CORTE */
+.gif-frame-full {
+    width: 100%;
+    height: 250px;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background: #09140b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid var(--goldMuted);
+}
+
+.scene-gif-full {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Exibe o GIF inteiro perfeitamente! */
+}
+
+.split-box h3 {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    margin-bottom: 14px;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.text-gold { color: var(--gold); }
+
+.hero-quote ul { list-style: none; }
+
+.hero-quote li {
+    font-size: 14px;
+    margin-bottom: 12px;
+    padding-left: 12px;
+    position: relative;
+    font-style: italic;
+    color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.problem-tags {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tag.bad {
+    background: rgba(224, 93, 56, 0.2);
+    border: 1px solid var(--dragonRed);
+    color: #ff9d85;
+    padding: 10px 16px;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ==========================
+   SLIDE 5 — CHAT BURRO (IMAGEM CNN)
+========================== */
+
+.chat-container {
+    max-width: 680px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+.chat-header {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 12px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--swampGreen);
+}
+
+.chat-user {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.chat-avatar-gif {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--gold);
+    box-shadow: 0 0 10px var(--gold);
+}
+
+.chat-body {
+    padding: 16px;
+    max-height: 200px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-msg {
+    align-self: flex-start;
+    background: rgba(199, 164, 122, 0.3);
+    border: 1px solid #c7a47a;
+    color: #fff;
+    padding: 10px 16px;
+    border-radius: 18px 18px 18px 4px;
+    font-size: 14px;
+    animation: popIn 0.3s ease;
+}
+
+@keyframes popIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.scrum-solution {
+    padding: 18px;
+    background: rgba(92, 124, 41, 0.2);
+    border-top: 2px solid var(--swampGreen);
+}
+
+.scrum-solution h4 {
+    color: var(--gold);
+    margin-bottom: 10px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.rituals-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.ritual-card {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 12px;
+    text-align: center;
+    border-top: 2px solid var(--gold);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+}
+
+.ritual-card i {
+    font-size: 18px;
+    color: var(--gold);
+}
+
+/* ==========================
+   SLIDE 6 — SPRINTS
+========================== */
+
+.sprints-roadmap {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.sprint-card {
+    width: 180px;
+    padding: 16px;
+    text-align: center;
+}
+
+.sprint-card.done {
+    border-color: var(--swampGreen);
+    background: rgba(92, 124, 41, 0.25);
+}
+
+.sprint-card.active {
+    border-color: var(--gold);
+    background: rgba(255, 215, 0, 0.15);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.sprint-badge {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.sprint-card h4 {
+    font-size: 15px;
+    margin-bottom: 6px;
+    font-family: 'Cinzel', serif;
+}
+
+.sprint-card p {
+    font-size: 12px;
+    color: #ccc;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.value-tag {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.status-done { background: rgba(145, 219, 133, 0.2); color: #91db85; border: 1px solid #91db85; }
+.status-active { background: rgba(255, 215, 0, 0.2); color: var(--gold); border: 1px solid var(--gold); }
+.status-planned { background: rgba(255, 255, 255, 0.1); color: #ccc; border: 1px solid #aaa; }
+.status-final { background: rgba(224, 93, 56, 0.2); color: #ff9d85; border: 1px solid var(--dragonRed); }
+
+/* ==========================
+   SLIDE 7 — KANBAN
+========================== */
+
+.kanban-board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 30px;
+    text-align: left;
+}
+
+.kanban-column {
+    padding: 18px;
+    min-height: 250px;
+}
+
+.kanban-column h3 {
+    font-size: 17px;
+    margin-bottom: 14px;
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.kanban-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.k-card {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 12px 14px;
+    border-radius: 10px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.k-card:hover {
+    transform: translateX(4px);
+    background: rgba(92, 124, 41, 0.3);
+    border-color: var(--gold);
+}
+
+.k-card.in-progress { border-left: 4px solid var(--gold); }
+.k-card.completed { border-left: 4px solid var(--swampGreen); opacity: 0.8; }
+
+/* ==========================
+   SLIDE 8 — FIONA TRANSFORM
+========================== */
+
+.fiona-container {
+    max-width: 620px;
+    margin: 20px auto;
+    padding: 25px;
+    text-align: center;
+}
+
+.fiona-container.ogre-mode {
+    background: rgba(35, 60, 25, 0.85);
+    border-color: var(--swampGreen);
+    box-shadow: 0 0 40px rgba(92, 124, 41, 0.6);
+}
+
+.magical-glow {
+    box-shadow: 0 0 25px var(--gold);
+}
+
+.fiona-media-frame {
+    width: 160px;
+    height: 160px;
+    margin: 0 auto 15px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--gold);
+    transition: transform 0.5s ease;
+}
+
+.fiona-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fiona-container.ogre-mode .fiona-media-frame {
+    transform: scale(1.15) rotate(-5deg);
+    border-color: var(--swampGreen);
+}
+
+.fiona-container h3 {
+    font-size: 24px;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 8px;
+}
+
+.fiona-container p {
+    font-size: 15px;
+    color: #ddd;
+    margin-bottom: 16px;
+}
+
+.alert-box {
+    margin-top: 16px;
+    background: rgba(224, 93, 56, 0.2);
+    border: 1px solid var(--dragonRed);
+    color: #ffb19e;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    line-height: 1.5;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* ==========================
+   SLIDE 9 — DRAGÃO / DEADLINE
+========================== */
+
+.dragon-flames {
+    background: radial-gradient(circle at center, #3d140e 0%, #150604 70%, #070a0d 100%);
+}
+
+.dragon-stage {
+    max-width: 650px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.fiery-frame {
+    border: 3px solid var(--dragonRed);
+    box-shadow: 0 0 35px var(--dragonRed);
+}
+
+.dragon-media-frame {
+    width: 240px;
+    height: 150px;
+    margin: 0 auto 15px auto;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.dragon-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.timer-container {
+    padding: 16px;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.donkey-scared-frame {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--dragonRed);
+}
+
+.donkey-scared-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.timer-container label {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dragonRed);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.timer-bar-bg {
+    width: 100%;
+    height: 16px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.timer-bar-fill {
+    width: 25%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff4e50, var(--dragonRed));
+    transition: width 0.5s ease;
+}
+
+/* ==========================
+   SLIDE 10 — SOFT SKILLS
+========================== */
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 25px;
+}
+
+.skill-card {
+    padding: 20px;
+    text-align: center;
+}
+
+.s-avatar-frame {
+    width: 75px;
+    height: 75px;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--gold);
+}
+
+.skill-avatar {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.skill-card h3 {
+    font-size: 22px;
+    font-family: 'Cinzel', serif;
+    margin-bottom: 4px;
+}
+
+.skill-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin-bottom: 10px;
+}
+
+.skill-card p {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+/* =====================================================
+   SLIDE 11 — MATRIZ COMPARATIVA INTERATIVA (CENA X)
+===================================================== */
+
+.matrix-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    margin-top: 25px;
+    text-align: left;
+}
+
+.matrix-card {
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    background: linear-gradient(180deg, rgba(32, 54, 23, 0.95), rgba(15, 28, 11, 0.95));
+    border: 2px solid var(--swampGreen);
+    border-radius: 16px;
+    transition: all 0.3s ease;
+}
+
+.matrix-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    border-color: var(--gold);
+    box-shadow: 0 12px 30px rgba(255, 215, 0, 0.25);
+}
+
+.m-side {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.m-side small {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--gold);
+    display: block;
+
+}
+
+.m-corp small { color: #8bbd38; }
+
+.m-side h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    color: white;
+}
+
+.m-side p {
+    font-size: 12px;
+    color: #ccc;
+}
+
+.m-icon-badge {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), #c4962c);
+    color: #2c1d0d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.corp-badge {
+    background: linear-gradient(135deg, #8bbd38, #3b6616);
+    color: #ffffff;
+    box-shadow: 0 0 10px rgba(139, 189, 56, 0.5);
+}
+
+.m-divider {
+    color: var(--gold);
+    font-size: 16px;
+    opacity: 0.8;
+    padding: 0 4px;
+}
+
+/* =====================================================
+   SLIDE 12 — SALÃO DE CONQUISTAS 3D (CENA XI)
+===================================================== */
+
+.hall-of-achievements {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.trophy-card {
+    width: 195px;
+    padding: 22px 16px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+}
+
+.trophy-card:hover {
+    transform: translateY(-10px) scale(1.05);
+    border-color: var(--gold);
+    box-shadow: 0 20px 40px rgba(255, 215, 0, 0.3);
+}
+
+.trophy-card.claimed {
+    border-color: var(--gold);
+    background: linear-gradient(180deg, rgba(77, 104, 36, 0.95), rgba(30, 48, 22, 0.98));
+    box-shadow: 0 0 35px var(--gold);
+}
+
+.trophy-badge {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #3d281a, #1b2e18);
+    border: 3px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    color: var(--gold);
+    margin-bottom: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+    transition: transform 0.4s ease;
+}
+
+.trophy-card:hover .trophy-badge {
+    transform: scale(1.15) rotate(8deg);
+    background: var(--gold);
+    color: #2c1d0d;
+}
+
+.trophy-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 16px;
+    color: white;
+    margin-bottom: 4px;
+}
+
+.trophy-subtitle {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.trophy-card p {
+    font-size: 12px;
+    line-height: 1.4;
+    color: #ddd;
+    margin-bottom: 14px;
+}
+
+.xp-banner {
+    background: var(--gold);
+    color: #2c1d0d;
+    font-size: 11px;
+    font-weight: 900;
+    padding: 4px 10px;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+}
+
+.trophy-card.claimed .xp-banner {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.btn-claim {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--goldMuted);
+    color: var(--gold);
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-claim:hover {
+    background: var(--gold);
+    color: #2c1d0d;
+}
+
+.margin-top-20 { margin-top: 25px; }
+
+/* SLIDE 13 — AGRADECIMENTO */
+
+.thanks-container {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 35px;
+    text-align: center;
+}
+
+.thanks-gif-frame {
+    width: 220px;
+    height: 160px;
+    margin: 0 auto 20px auto;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 3px solid var(--gold);
+    box-shadow: 0 0 35px var(--gold);
+}
+
+.thanks-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thanks-subtitle {
+    font-size: 20px;
+    color: var(--gold);
+    font-weight: 600;
+    margin: 15px 0;
+    font-family: 'Cinzel', serif;
+}
+
+.final-buttons { margin-top: 25px; }
+
+/* ==========================
+   RESPONSIVIDADE (MOBILE / TABLET)
+========================== */
+
+@media (max-width: 900px) {
+    #presentation-hud { padding: 8px 15px; border-radius: 20px; }
+    .hud-logo { font-size: 13px; }
+    .hud-btn { padding: 6px 10px; font-size: 11px; }
+    .scene h2 { font-size: 30px; }
+    .cinematic-title { font-size: 34px; }
+    .cinematic-title span { font-size: 24px; }
+    .split-view, .mission-grid, .skills-grid, .kanban-board, .matrix-grid { grid-template-columns: 1fr; }
+    .characters, .hall-of-achievements { flex-direction: column; align-items: center; }
+    .character-card, .trophy-card { width: 100%; max-width: 300px; }
+    .sprints-roadmap { flex-direction: column; align-items: center; }
+    .sprint-card { width: 100%; max-width: 260px; }
+    .ogre-sign-banner { font-size: 11px; padding: 6px 16px; }
+}
