@@ -53,7 +53,6 @@ document.addEventListener("DOMContentLoaded", () => {
 function initIntroAnimations() {
     if (typeof gsap !== "undefined") {
         gsap.from("#slide1 h1", { y: 30, opacity: 0, duration: 0.8 });
-        gsap.from("#slide1 #start", { scale: 0.8, opacity: 0, duration: 0.8, delay: 0.3, ease: "back.out(1.7)" });
     }
 }
 
@@ -130,10 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("btn-next")?.addEventListener("click", () => {
         goToSlide(currentSlideIndex + 1);
-    });
-
-    document.getElementById("start")?.addEventListener("click", () => {
-        goToSlide(2);
     });
 
     document.getElementById("btn-go-thanks")?.addEventListener("click", () => {
